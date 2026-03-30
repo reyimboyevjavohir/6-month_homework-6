@@ -1,0 +1,116 @@
+{
+  "info": {
+    "name": "Trello PostgreSQL CRUD API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Board",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Backend yozish\",\n  \"description\": \"Express va PostgreSQL ulash\",\n  \"status\": \"tasks\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/boards",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "boards"]
+        }
+      }
+    },
+    {
+      "name": "Get All Boards",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/boards",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "boards"]
+        }
+      }
+    },
+    {
+      "name": "Get Board By ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/boards/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "boards", "1"]
+        }
+      }
+    },
+    {
+      "name": "Update Board",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"API tayyorlash\",\n  \"description\": \"To'liq yangilandi\",\n  \"status\": \"in_progress\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/boards/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "boards", "1"]
+        }
+      }
+    },
+    {
+      "name": "Update Board Status",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"done\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/boards/1/status",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "boards", "1", "status"]
+        }
+      }
+    },
+    {
+      "name": "Delete Board",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:3000/api/boards/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "boards", "1"]
+        }
+      }
+    }
+  ]
+}
